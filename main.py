@@ -20,7 +20,7 @@ def visualize_prediction(image, pred_class, true_class):          # 顯示單張
     plt.axis('off')
     plt.show()
 
-def run_multiple_test_samples(model, params, test_data, num_samples=10):           # 從測試資料中隨機挑選 num_samples 張圖進行推論
+def run_multiple_test_samples(model, params, test_data, num_samples=20):           # 從測試資料中隨機挑選 num_samples 張圖進行推論
     print(f"\n📷 Running inference on {num_samples} random test images...")
     correct = 0
     error_stats = {}
@@ -70,7 +70,7 @@ def main():
         channels_mlp_dim=256,
     )
 
-    batch_size = 128
+    batch_size = 16
     num_epochs = 20
 
     train_data = load_dataset(batch_size=batch_size, train=True)
